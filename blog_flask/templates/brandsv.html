@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TBP - Homepage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="logscripts.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+
+<body>
+
+<ul style="list-style-type:none; font-size: 30px;">
+  <li style="display: inline;float: left;padding-left: 10px;"><i class="fa fa-facebook"></i></li>
+  <li style="display: inline;float: left; padding-left: 10px;"><i class="fa fa-whatsapp"></i></li>
+  <li style="display: inline;float: left; padding-left: 10px;"><i class="fa fa-instagram"></i></li>
+  <li style="float: right; font-size: 20px;padding-right: 10px;"><p>Welcome Visitor - {{ name }}!</p></li>
+</ul>
+  <br><br>
+  <!-- header -->
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/visitorhome">The Blogger's Point</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/bloggersv">Bloggers</a></li>
+      <li><a href="/brandsv">Brands</a></li>
+      <li><a href="/blogsv">Blogs</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/logout"><button type="button" class="btn btn-danger">Log Out</button></a></li>
+    </ul>
+            
+    
+        
+  </div>
+</nav>
+
+<div>
+  {% for i in results%}
+  <div class="panel panel-default" style="margin: 50px 50px 50px 50px;">
+  <div class="panel-heading">{{i.name}}</div>
+  <div class="panel-body">
+    <ul style="list-style: none;">
+      <br>
+      <li>Location : {{i.location}}</li><br>
+      <li>Category : {{i.category}}</li><br>
+      <img src="{{i.photo}}" alt="image nahi hai re baba" height="100px" width="100px"><br>
+    </ul>
+  </div>
+</div>
+{% endfor %}
+
+</div>
